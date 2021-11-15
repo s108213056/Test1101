@@ -1,4 +1,5 @@
 <?php
+
 require("dbconfig.php");
 if(isset($_GET['id'])) {
 	$id=(int)$_GET['id'];
