@@ -43,6 +43,16 @@ $rs = mysqli_fetch_assoc($result);
 	"<a href='2.like.php?id=", $rs['id'], "&t=-1'>Dislike</a> ",
 	"<a href='2.delete.php?id=", $rs['id'], "'>Delete</a> ",
 	"<a href='1.editUI.php?id=", $rs['id'], "'>Edit</a></td></tr>";
+	
+	if($rs['msg']<=5){
+		echo '<font style="color:black;">$rs["msg"]</font>';
+	}
+	if($rs['msg']>5 && $rs['msg'] <=10){
+		echo '<font style"=color:blue;">$rs["msg"]</font>';
+	}
+	if($rs['msg']>=11){
+		echo'<font style"=color:red;">$rs["msg"]</font>';
+	}	
 ?>
 </table>
 <?php
