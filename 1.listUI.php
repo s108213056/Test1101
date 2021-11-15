@@ -39,6 +39,14 @@ while (	$rs = mysqli_fetch_assoc($result)) {
 	echo "<tr><td>" , $rs['id'] ,
 	"</td><td><a href='3.viewPost.php?id=$id'>" , $rs['title'],"</a>",
 	"</td><td>" , $rs['msg'], 
+
+	/*
+
+	"<td><a href='setColour.php?id=", $rs['msg'], "&a<=5'>Like</a> ",
+	"<a href='setColour.php?id=", $rs['msg'], "&a=-1'>Dislike</a> ";
+
+	*/
+
 	"</td><td>", $rs['name'], "</td>",
 	"</td><td>", $rs['likes'], "</td>",
 	"<td><a href='2.like.php?id=", $rs['id'], "&t=1'>Like</a> ",
@@ -48,7 +56,21 @@ while (	$rs = mysqli_fetch_assoc($result)) {
 		"<a href='1.editUI.php?id=", $rs['id'], "'>Edit</a>";
 	}
 	echo "</td></tr>";
+
+/*
 }
+if($rs['msg']<=5){
+	echo '<font style="color:black;">$rs["msg"]</font>';
+}
+elif($rs['msg']>5 && $rs['msg'] <=10){
+	echo '<font style"=color:blue;">$rs["msg"]</font>';
+}
+else($rs['msg']>=11){
+	echo'<font style"=color:red;">$rs["msg"]</font>';
+}
+
+*/
+
 ?>
 </table>
 </body>
