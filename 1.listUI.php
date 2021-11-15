@@ -11,7 +11,12 @@ if ( ! (checkAccess(1))) {
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>無標題文件</title>
 </head>
-
+    <select id="pet-select">
+        <option value="">--Please choose an option--</option>
+        <option value="Small_talk">閒聊</option>
+        <option value="Feeling">心情</option>
+		<option value="Gossip">八卦</option>
+    </select>
 <body>
 
 <p><?php echo "hello ",$_SESSION['userID'];  ?>	<a href='1.insertUI.php'>Add</a>
@@ -65,6 +70,7 @@ while (	$rs = mysqli_fetch_assoc($result)) {
 		echo "<a href='2.delete.php?id=", $rs['id'], "'>Delete</a> ",
 		"<a href='1.editUI.php?id=", $rs['id'], "'>Edit</a>";
 	}
+
 	echo "</td></tr>";
 }
 
